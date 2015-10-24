@@ -1,0 +1,12 @@
+message Headset {
+optional string vendor = 1;
+optional string model = 2;
+optional float screenToLensDistance = 3;
+optional float interLensDistance = 4;
+repeated float leftEyeFieldOfViewAngles = 5 [packed=true];
+optional float trayToLensDistance = 6;
+repeated float distortionCoefficients = 7 [packed=true];
+optional bool hasMagnet = 10;
+optional int32 verticalAlignment = 11;
+optional int32 primaryButton = 12;
+}
