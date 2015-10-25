@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5409A2C1BDD307F0088E0A2 /* CardboardParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5409A2B1BDD307F0088E0A2 /* CardboardParams.swift */; settings = {ASSET_TAGS = (); }; };
+		A5409A2E1BDD31180088E0A2 /* FieldOfFiew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5409A2D1BDD31180088E0A2 /* FieldOfFiew.swift */; settings = {ASSET_TAGS = (); }; };
+		A5409A301BDD353A0088E0A2 /* ScreenParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5409A2F1BDD353A0088E0A2 /* ScreenParams.swift */; settings = {ASSET_TAGS = (); }; };
 		A59F67951BDC29A8004559A7 /* GoogleCardboardParser.h in Headers */ = {isa = PBXBuildFile; fileRef = A59F67941BDC29A8004559A7 /* GoogleCardboardParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A59F679C1BDC29A8004559A7 /* GoogleCardboardParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59F67911BDC29A8004559A7 /* GoogleCardboardParser.framework */; settings = {ASSET_TAGS = (); }; };
 		A59F67A11BDC29A8004559A7 /* GoogleCardboardParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F67A01BDC29A8004559A7 /* GoogleCardboardParserTests.swift */; };
@@ -27,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A5409A2B1BDD307F0088E0A2 /* CardboardParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardboardParams.swift; sourceTree = "<group>"; };
+		A5409A2D1BDD31180088E0A2 /* FieldOfFiew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldOfFiew.swift; sourceTree = "<group>"; };
+		A5409A2F1BDD353A0088E0A2 /* ScreenParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenParams.swift; sourceTree = "<group>"; };
 		A59F67911BDC29A8004559A7 /* GoogleCardboardParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GoogleCardboardParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59F67941BDC29A8004559A7 /* GoogleCardboardParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoogleCardboardParser.h; sourceTree = "<group>"; };
 		A59F67961BDC29A8004559A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,6 +93,9 @@
 				A59F67AC1BDC2B5D004559A7 /* Proto */,
 				A59F67941BDC29A8004559A7 /* GoogleCardboardParser.h */,
 				A59F67961BDC29A8004559A7 /* Info.plist */,
+				A5409A2B1BDD307F0088E0A2 /* CardboardParams.swift */,
+				A5409A2D1BDD31180088E0A2 /* FieldOfFiew.swift */,
+				A5409A2F1BDD353A0088E0A2 /* ScreenParams.swift */,
 			);
 			path = GoogleCardboardParser;
 			sourceTree = "<group>";
@@ -237,7 +246,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5409A301BDD353A0088E0A2 /* ScreenParams.swift in Sources */,
+				A5409A2E1BDD31180088E0A2 /* FieldOfFiew.swift in Sources */,
 				A59F67B61BDC2F38004559A7 /* Headset.proto.swift in Sources */,
+				A5409A2C1BDD307F0088E0A2 /* CardboardParams.swift in Sources */,
 				A59F67BE1BDC4748004559A7 /* UrlResolver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,6 +446,7 @@
 				A59F67A71BDC29A8004559A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A59F67A81BDC29A8004559A7 /* Build configuration list for PBXNativeTarget "GoogleCardboardParserTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +455,7 @@
 				A59F67AA1BDC29A8004559A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
