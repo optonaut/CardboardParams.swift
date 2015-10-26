@@ -23,7 +23,14 @@ public class CardboardFactory {
     }
     
     public static func CardboardParamsFromBase64(base64: String) -> CardboardParams {
-        let data = NSData(base64EncodedString: base64, options: NSDataBase64DecodingOptions(rawValue: 0))
+        
+        //Replace base64url chars with base64 chars. 
+        var safe = base64.stringByReplacingOccurrencesOfString("-", withString: "+",
+            options: NSStringCompareOptions.LiteralSearch, range: nil)
+        safe = safe.stringByReplacingOccurrencesOfString("_", withString: "/",
+            options: NSStringCompareOptions.LiteralSearch, range: nil)
+        
+        let data = NSData(base64EncodedString: safe, options: NSDataBase64DecodingOptions(rawValue: 0))
         return CardboardParamsFromData(data!)
     }
 }
