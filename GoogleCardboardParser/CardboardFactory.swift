@@ -30,6 +30,10 @@ public class CardboardFactory {
         safe = safe.stringByReplacingOccurrencesOfString("_", withString: "/",
             options: NSStringCompareOptions.LiteralSearch, range: nil)
         
+        while safe.characters.count % 4 != 0 {
+            safe = safe + "="
+        }
+        
         let data = NSData(base64EncodedString: safe, options: NSDataBase64DecodingOptions(rawValue: 0))
         return CardboardParamsFromData(data!)
     }

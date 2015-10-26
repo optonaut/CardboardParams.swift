@@ -12,6 +12,7 @@ import XCTest
 class GoogleCardboardParserTests: XCTestCase {
     
     var VROneData : NSData!
+    let OnePlusOneBase64 = "CgZHb29nbGUSEkNhcmRib2FyZCBJL08gMjAxNR2ZuxY9JbbzfT0qEAAASEIAAEhCAABIQgAASEJYADUpXA89OgiCc4Y-MCqJPlAAYAM"
     
     override func setUp() {
         super.setUp()
@@ -37,6 +38,15 @@ class GoogleCardboardParserTests: XCTestCase {
                 XCTAssert(false, "Timeout")
             }
         })
+    }
+    
+    func testDecodeDeviceFromUrlData() {
+        let headset = CardboardFactory.CardboardParamsFromBase64(OnePlusOneBase64)
+        
+        print(headset)
+        
+        XCTAssertEqual(headset.vendor, "Google")
+        XCTAssertEqual(headset.model, "Cardboard I/O 2015")
     }
     
     func testDecodeDeviceFromData() {
