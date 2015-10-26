@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A5409A2C1BDD307F0088E0A2 /* CardboardParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5409A2B1BDD307F0088E0A2 /* CardboardParams.swift */; settings = {ASSET_TAGS = (); }; };
-		A5409A2E1BDD31180088E0A2 /* FieldOfFiew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5409A2D1BDD31180088E0A2 /* FieldOfFiew.swift */; settings = {ASSET_TAGS = (); }; };
-		A5409A301BDD353A0088E0A2 /* ScreenParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5409A2F1BDD353A0088E0A2 /* ScreenParams.swift */; settings = {ASSET_TAGS = (); }; };
+		A5409A2C1BDD307F0088E0A2 /* CardboardParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5409A2B1BDD307F0088E0A2 /* CardboardParams.swift */; };
+		A5409A2E1BDD31180088E0A2 /* FieldOfFiew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5409A2D1BDD31180088E0A2 /* FieldOfFiew.swift */; };
+		A5409A301BDD353A0088E0A2 /* ScreenParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5409A2F1BDD353A0088E0A2 /* ScreenParams.swift */; };
 		A59F67951BDC29A8004559A7 /* GoogleCardboardParser.h in Headers */ = {isa = PBXBuildFile; fileRef = A59F67941BDC29A8004559A7 /* GoogleCardboardParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A59F679C1BDC29A8004559A7 /* GoogleCardboardParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59F67911BDC29A8004559A7 /* GoogleCardboardParser.framework */; settings = {ASSET_TAGS = (); }; };
+		A59F679C1BDC29A8004559A7 /* GoogleCardboardParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59F67911BDC29A8004559A7 /* GoogleCardboardParser.framework */; };
 		A59F67A11BDC29A8004559A7 /* GoogleCardboardParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F67A01BDC29A8004559A7 /* GoogleCardboardParserTests.swift */; };
-		A59F67AE1BDC2B66004559A7 /* Headset.proto in Resources */ = {isa = PBXBuildFile; fileRef = A59F67AD1BDC2B66004559A7 /* Headset.proto */; settings = {ASSET_TAGS = (); }; };
-		A59F67B61BDC2F38004559A7 /* Headset.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F67B51BDC2F38004559A7 /* Headset.proto.swift */; settings = {ASSET_TAGS = (); }; };
+		A59F67AE1BDC2B66004559A7 /* Headset.proto in Resources */ = {isa = PBXBuildFile; fileRef = A59F67AD1BDC2B66004559A7 /* Headset.proto */; };
+		A59F67B61BDC2F38004559A7 /* Headset.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F67B51BDC2F38004559A7 /* Headset.proto.swift */; };
 		A59F67B91BDC325C004559A7 /* ProtocolBuffers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59F67B31BDC2EFA004559A7 /* ProtocolBuffers.framework */; };
-		A59F67BE1BDC4748004559A7 /* UrlResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F67BD1BDC4748004559A7 /* UrlResolver.swift */; settings = {ASSET_TAGS = (); }; };
+		A59F67BE1BDC4748004559A7 /* UrlResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F67BD1BDC4748004559A7 /* UrlResolver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -377,6 +377,7 @@
 				);
 				INFOPLIST_FILE = GoogleCardboardParser/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = optonaut.GoogleCardboardParser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -400,6 +401,7 @@
 				);
 				INFOPLIST_FILE = GoogleCardboardParser/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = optonaut.GoogleCardboardParser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
