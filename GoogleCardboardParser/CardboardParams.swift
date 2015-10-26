@@ -53,11 +53,11 @@ public struct CardboardParams {
     public func getYEyeOffsetMeters(screen: ScreenParams) -> Float {
         switch verticalAlignment {
             case .Center:
-                return screen.heightMeters / Float(2);
+                return screen.widthMeters / Float(2);
             case .Bottom:
                 return verticalDistanceToLensCenter - screen.borderSizeMeters;
             case .Top:
-                return screen.heightMeters - (verticalDistanceToLensCenter - screen.borderSizeMeters);
+                return screen.widthMeters - (verticalDistanceToLensCenter - screen.borderSizeMeters);
         }
     }
 }
