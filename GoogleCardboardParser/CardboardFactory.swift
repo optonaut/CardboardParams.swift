@@ -22,8 +22,8 @@ public class CardboardFactory {
         return params
     }
     
-    public static func CardboardParamsFromBase64(base64: String) {
+    public static func CardboardParamsFromBase64(base64: String) -> CardboardParams {
         let data = NSData(base64EncodedString: base64, options: NSDataBase64DecodingOptions(rawValue: 0))
-        return CardboardParamsFromData(data: data)
+        return CardboardParamsFromData(data!)
     }
 }
