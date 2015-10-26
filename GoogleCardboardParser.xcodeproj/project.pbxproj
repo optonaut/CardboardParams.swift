@@ -17,6 +17,7 @@
 		A59F67B61BDC2F38004559A7 /* Headset.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F67B51BDC2F38004559A7 /* Headset.proto.swift */; };
 		A59F67B91BDC325C004559A7 /* ProtocolBuffers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59F67B31BDC2EFA004559A7 /* ProtocolBuffers.framework */; };
 		A59F67BE1BDC4748004559A7 /* UrlResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F67BD1BDC4748004559A7 /* UrlResolver.swift */; };
+		A5F8F7681BDE3C5000CAD4E6 /* CardboardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F8F7671BDE3C5000CAD4E6 /* CardboardFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		A59F67B51BDC2F38004559A7 /* Headset.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Headset.proto.swift; sourceTree = "<group>"; };
 		A59F67B71BDC320E004559A7 /* ProtocolBuffers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProtocolBuffers.framework; path = Carthage/Build/Mac/ProtocolBuffers.framework; sourceTree = "<group>"; };
 		A59F67BD1BDC4748004559A7 /* UrlResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlResolver.swift; sourceTree = "<group>"; };
+		A5F8F7671BDE3C5000CAD4E6 /* CardboardFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardboardFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				A5409A2B1BDD307F0088E0A2 /* CardboardParams.swift */,
 				A5409A2D1BDD31180088E0A2 /* FieldOfFiew.swift */,
 				A5409A2F1BDD353A0088E0A2 /* ScreenParams.swift */,
+				A5F8F7671BDE3C5000CAD4E6 /* CardboardFactory.swift */,
 			);
 			path = GoogleCardboardParser;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				A59F67B61BDC2F38004559A7 /* Headset.proto.swift in Sources */,
 				A5409A2C1BDD307F0088E0A2 /* CardboardParams.swift in Sources */,
 				A59F67BE1BDC4748004559A7 /* UrlResolver.swift in Sources */,
+				A5F8F7681BDE3C5000CAD4E6 /* CardboardFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
