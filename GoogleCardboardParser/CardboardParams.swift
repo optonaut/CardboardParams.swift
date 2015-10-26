@@ -8,23 +8,23 @@
 
 import Foundation
 
-enum VerticalAlignment: Int32 {
+public enum VerticalAlignment: Int32 {
     case Bottom = 0
     case Center = 1
     case Top = 2
 }
 
-struct CardboardParams {
+public struct CardboardParams {
     
-    let vendor: String
-    let model: String
-    let interLensDistance: Float
-    let verticalAlignment: VerticalAlignment
-    let verticalDistanceToLensCenter: Float
-    let screenToLensDistance: Float
-    let leftEyeMaxFov: FieldOfView
-    let hasMagnet: Bool
-    let distortionCoefficients: [Float]
+    public let vendor: String
+    public let model: String
+    public let interLensDistance: Float
+    public let verticalAlignment: VerticalAlignment
+    public let verticalDistanceToLensCenter: Float
+    public let screenToLensDistance: Float
+    public let leftEyeMaxFov: FieldOfView
+    public let hasMagnet: Bool
+    public let distortionCoefficients: [Float]
     
     internal init(root: Headset) {
         vendor = root.vendor
@@ -38,7 +38,7 @@ struct CardboardParams {
         leftEyeMaxFov = FieldOfView(angles: root.leftEyeFieldOfViewAngles)
     }
     
-    init() {
+    public init() {
         vendor = "Google, Inc.";
         model = "Cardboard v1";
         interLensDistance = 0.06
@@ -50,7 +50,7 @@ struct CardboardParams {
         leftEyeMaxFov = FieldOfView(angles: [40, 40, 40, 40])
     }
     
-    func getYEyeOffsetMeters(screen: ScreenParams) -> Float {
+    public func getYEyeOffsetMeters(screen: ScreenParams) -> Float {
         switch verticalAlignment {
             case .Center:
                 return screen.heightMeters / Float(2);

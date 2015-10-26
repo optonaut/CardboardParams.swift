@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct FieldOfView {
+public struct FieldOfView {
     
     let angles: [Float]
     
-    init(angles: [Float]) {
+    public init(angles: [Float]) {
         guard angles.count == 4 else {
             fatalError("FieldOfView expects four angles.")
         }
