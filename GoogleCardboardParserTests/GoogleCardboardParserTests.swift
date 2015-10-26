@@ -33,7 +33,7 @@ class GoogleCardboardParserTests: XCTestCase {
             expectation.fulfill()
         })
         
-        waitForExpectationsWithTimeout(0.5, handler: { error in
+        waitForExpectationsWithTimeout(5, handler: { error in
             if error != nil {
                 XCTAssert(false, "Timeout")
             }

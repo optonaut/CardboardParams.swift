@@ -25,8 +25,9 @@ public struct CardboardParams {
     public let leftEyeMaxFov: FieldOfView
     public let hasMagnet: Bool
     public let distortionCoefficients: [Float]
+    public let compressedRepresentation: NSData
     
-    internal init(root: Headset) {
+    internal init(root: Headset, data: NSData) {
         vendor = root.vendor
         model = root.model
         interLensDistance = root.interLensDistance
@@ -36,6 +37,7 @@ public struct CardboardParams {
         distortionCoefficients = root.distortionCoefficients
         screenToLensDistance = root.screenToLensDistance
         leftEyeMaxFov = FieldOfView(angles: root.leftEyeFieldOfViewAngles)
+        compressedRepresentation = data
     }
     
     public init() {
@@ -48,6 +50,7 @@ public struct CardboardParams {
         hasMagnet = true
         distortionCoefficients = [0.441, 0.156]
         leftEyeMaxFov = FieldOfView(angles: [40, 40, 40, 40])
+        compressedRepresentation = NSData()
     }
     
     public func getYEyeOffsetMeters(screen: ScreenParams) -> Float {

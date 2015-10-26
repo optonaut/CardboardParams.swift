@@ -18,7 +18,7 @@ public class CardboardFactory {
     
     public static func CardboardParamsFromData(data: NSData) -> CardboardParams {
         let headset = try! Headset.parseFromData(data)
-        let params = CardboardParams(root: headset)
+        let params = CardboardParams(root: headset, data: data)
         return params
     }
     
