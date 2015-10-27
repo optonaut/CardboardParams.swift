@@ -20,7 +20,6 @@ public struct ScreenParams {
     public let heightMeters: Float
     
     public init(width: Int, height: Int, widthMeters: Float, heightMeters: Float, borderSizeMeters: Float = ScreenParams.DefaultBorderSizeInMeters) {
-        
         self.width = width
         self.height = height
         self.widthMeters = widthMeters

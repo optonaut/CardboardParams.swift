@@ -10,7 +10,7 @@ import Foundation
 
 public class CardboardFactory {
     
-    public static func CardboardParamsFromUrl(url: String, onCompleted: (CardboardParams?) -> Void) {
+    public static func CardboardParamsFromUrl(url: String, onCompleted: CardboardParams? -> Void) {
         UrlResolver.resolve(url, onCompleted: { data in
             onCompleted(CardboardFactory.CardboardParamsFromData(data!))
         })
@@ -23,7 +23,6 @@ public class CardboardFactory {
     }
     
     public static func CardboardParamsFromBase64(base64: String) -> CardboardParams {
-        
         //Replace base64url chars with base64 chars. 
         var safe = base64.stringByReplacingOccurrencesOfString("-", withString: "+",
             options: NSStringCompareOptions.LiteralSearch, range: nil)
