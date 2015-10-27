@@ -11,18 +11,25 @@ import Foundation
 public class CardboardFactory {
     
     public static func CardboardParamsFromUrl(url: String, onCompleted: CardboardParams? -> Void) {
-        UrlResolver.resolve(url, onCompleted: { data in
-            onCompleted(CardboardFactory.CardboardParamsFromData(data!))
+        URLResolver.resolve(url, onCompleted: { data in
+            guard let data = data else {
+                onCompleted(nil)
+                return
+            }
+            
+            onCompleted(CardboardFactory.CardboardParamsFromData(data))
         })
     }
     
-    public static func CardboardParamsFromData(data: NSData) -> CardboardParams {
-        let headset = try! Headset.parseFromData(data)
+    public static func CardboardParamsFromData(data: NSData) -> CardboardParams? {
+        guard let headset = try? Headset.parseFromData(data) else {
+            return nil
+        }
         let params = CardboardParams(root: headset, data: data)
         return params
     }
     
-    public static func CardboardParamsFromBase64(base64: String) -> CardboardParams {
+    public static func CardboardParamsFromBase64(base64: String) -> CardboardParams? {
         //Replace base64url chars with base64 chars. 
         var safe = base64.stringByReplacingOccurrencesOfString("-", withString: "+",
             options: NSStringCompareOptions.LiteralSearch, range: nil)
@@ -33,7 +40,10 @@ public class CardboardFactory {
             safe = safe + "="
         }
         
-        let data = NSData(base64EncodedString: safe, options: NSDataBase64DecodingOptions(rawValue: 0))
-        return CardboardParamsFromData(data!)
+        guard let data = NSData(base64EncodedString: safe, options: NSDataBase64DecodingOptions(rawValue: 0)) else {
+            return nil
+        }
+        
+        return CardboardParamsFromData(data)
     }
 }

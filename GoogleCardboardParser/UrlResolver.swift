@@ -8,25 +8,31 @@
 
 import Foundation
 
-public class UrlResolver : NSObject, NSURLSessionDelegate {
+public class URLResolver: NSObject  {
     
-    static func resolve(url: String, onCompleted: (NSData?) -> Void) {
-        let url = NSURL(string: url)
+    static func resolve(url: String, onCompleted: NSData? -> Void) {
+        guard let url = NSURL(string: url) else {
+            onCompleted(nil)
+            return
+        }
     
         let session = NSURLSession(
             configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
-            delegate: UrlResolver(),
+            delegate: URLResolver(),
             delegateQueue: nil)
         
-        let task = session.dataTaskWithURL(url!) {(data, response, error) in
-            let httpResponse = response as! NSHTTPURLResponse
+        let task = session.dataTaskWithURL(url) {(data, response, error) in
+            guard let httpResponse = response as? NSHTTPURLResponse else {
+                onCompleted(nil)
+                return
+            }
             
             if httpResponse.statusCode == 301 && httpResponse.allHeaderFields["Location"] != nil {
                 let newUrl = httpResponse.allHeaderFields["Location"] as! String
                 if let prefixRange = newUrl.rangeOfString("http://google.com/cardboard/cfg?p=") {
                     let suffixStart = newUrl.startIndex.advancedBy(prefixRange.count)
                     let suffix = newUrl.substringFromIndex(suffixStart)
-                    onCompleted(NSData(base64EncodedString: suffix, options: NSDataBase64DecodingOptions(rawValue: 0)))
+                    onCompleted(NSData(base64EncodedString: suffix, options: []))
                 }
             } else {
                 onCompleted(nil)
@@ -36,9 +42,16 @@ public class UrlResolver : NSObject, NSURLSessionDelegate {
         task.resume()
     }
     
-    func URLSession(session: NSURLSession, task: NSURLSessionTask,
-        willPerformHTTPRedirection response: NSHTTPURLResponse,
-        newRequest request: NSURLRequest, completionHandler: (NSURLRequest!) -> Void) {
+}
+
+extension URLResolver: NSURLSessionDelegate {
+    
+    func URLSession(session: NSURLSession,
+                    task: NSURLSessionTask,
+                    willPerformHTTPRedirection response: NSHTTPURLResponse,
+                    newRequest request: NSURLRequest,
+                    completionHandler: (NSURLRequest!) -> Void) {
         completionHandler(nil)
     }
+    
 }

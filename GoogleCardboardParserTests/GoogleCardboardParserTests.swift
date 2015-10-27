@@ -28,7 +28,7 @@ class GoogleCardboardParserTests: XCTestCase {
         
         let expectation = expectationWithDescription("Data Decoded")
         
-        UrlResolver.resolve(url, onCompleted: { data in
+        URLResolver.resolve(url, onCompleted: { data in
             XCTAssertEqual(data, self.VROneData)
             expectation.fulfill()
         })
@@ -41,7 +41,7 @@ class GoogleCardboardParserTests: XCTestCase {
     }
     
     func testDecodeDeviceFromUrlData() {
-        let headset = CardboardFactory.CardboardParamsFromBase64(OnePlusOneBase64)
+        let headset = CardboardFactory.CardboardParamsFromBase64(OnePlusOneBase64)!
         
         print(headset)
         
