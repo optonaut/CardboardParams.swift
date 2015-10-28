@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Result
 @testable import CardboardParams
 
 class CardboardParamsTests: XCTestCase {
@@ -51,7 +52,7 @@ class CardboardParamsTests: XCTestCase {
 
             expectation.fulfill()
             
-            XCTAssert(result.error != nil)
+            XCTAssert(result.error == nil)
             if let cardboard = result.value {
                 XCTAssertEqual(cardboard.vendor, "Carl Zeiss AG")
                 XCTAssertEqual(cardboard.model, "VR ONE")

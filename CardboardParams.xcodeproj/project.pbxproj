@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8F4B6F9D1BE0E7E8005D2D68 /* ProtocolBuffers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4B6F9B1BE0E7E8005D2D68 /* ProtocolBuffers.framework */; };
 		8F4B6F9E1BE0E7E8005D2D68 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4B6F9C1BE0E7E8005D2D68 /* Result.framework */; };
+		8F4B6FA01BE0EFD8005D2D68 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8F4B6F9C1BE0E7E8005D2D68 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8F4B6FA31BE0F9CA005D2D68 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4B6F9C1BE0E7E8005D2D68 /* Result.framework */; };
 		A5409A2C1BDD307F0088E0A2 /* CardboardParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5409A2B1BDD307F0088E0A2 /* CardboardParams.swift */; };
 		A5409A2E1BDD31180088E0A2 /* FieldOfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5409A2D1BDD31180088E0A2 /* FieldOfView.swift */; };
 		A5409A301BDD353A0088E0A2 /* ScreenParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5409A2F1BDD353A0088E0A2 /* ScreenParams.swift */; };
@@ -29,6 +31,19 @@
 			remoteInfo = CardboardParams;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8F4B6F9F1BE0EFCA005D2D68 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8F4B6FA01BE0EFD8005D2D68 /* Result.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8F4B6F9B1BE0E7E8005D2D68 /* ProtocolBuffers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProtocolBuffers.framework; path = Carthage/Build/iOS/ProtocolBuffers.framework; sourceTree = "<group>"; };
@@ -62,6 +77,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A59F679C1BDC29A8004559A7 /* CardboardParams.framework in Frameworks */,
+				8F4B6FA31BE0F9CA005D2D68 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +176,7 @@
 				A59F67971BDC29A8004559A7 /* Sources */,
 				A59F67981BDC29A8004559A7 /* Frameworks */,
 				A59F67991BDC29A8004559A7 /* Resources */,
+				8F4B6F9F1BE0EFCA005D2D68 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -415,6 +432,10 @@
 		A59F67A91BDC29A8004559A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CardboardParamsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = optonaut.CardboardParamsTests;
@@ -425,6 +446,10 @@
 		A59F67AA1BDC29A8004559A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CardboardParamsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = optonaut.CardboardParamsTests;
