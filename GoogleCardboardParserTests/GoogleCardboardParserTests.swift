@@ -29,7 +29,8 @@ class GoogleCardboardParserTests: XCTestCase {
         
         let expectation = expectationWithDescription("Data Decoded")
         
-        URLResolver.resolve(url, onCompleted: { data in
+        URLResolver.resolve(url, onCompleted: { data, error in
+            XCTAssert(error == nil)
             XCTAssertEqual(data, self.VROneData)
             expectation.fulfill()
         })
@@ -41,22 +42,79 @@ class GoogleCardboardParserTests: XCTestCase {
         })
     }
     
-    func testDecodeDeviceFromUrlData() {
-        let headset = CardboardFactory.CardboardParamsFromBase64(OnePlusOneBase64)!
+    func testExpandUrlAndGetDataFactory() {
+        let url = "http://goo.gl/vvTUK3";
         
-        print(headset)
+        let expectation = expectationWithDescription("Data Decoded")
+        
+        CardboardFactory.CardboardParamsFromUrl(url, onCompleted: { cardboard, error in
+
+            expectation.fulfill()
+            
+            XCTAssert(error != nil)
+            if let cardboard = cardboard {
+                XCTAssertEqual(cardboard.vendor, "Carl Zeiss AG")
+                XCTAssertEqual(cardboard.model, "VR ONE")
+                XCTAssertEqual(cardboard.compressedRepresentation, self.VROneData)
+            } else {
+                XCTAssert(false)
+            }
+        })
+        
+        waitForExpectationsWithTimeout(5, handler: { error in
+            if error != nil {
+                XCTAssert(false, "Timeout")
+            }
+        })
+    }
+
+    
+    func testDecodeDeviceFromUrlData() {
+        let headset = try! CardboardFactory.CardboardParamsFromBase64(OnePlusOneBase64)!
         
         XCTAssertEqual(headset.vendor, "Google")
         XCTAssertEqual(headset.model, "Cardboard I/O 2015")
     }
     
     func testDecodeDeviceFromOtherUrlData() {
-        let headset = CardboardFactory.CardboardParamsFromBase64(OtherOnePlusOneBase64)!
+        let headset = try! CardboardFactory.CardboardParamsFromBase64(OtherOnePlusOneBase64)!
         
-        print(headset)
+        XCTAssertEqual(headset.vendor, "I AM Cardboard")
+        XCTAssertEqual(headset.model, "IAC Giant EVA Headset")
+    }
+    
+    func testDecodeDeviceBase64Error() {
+        do {
+            _ = try CardboardFactory.CardboardParamsFromBase64("Nonesense Data")!
+            XCTAssert(false)
+        } catch {
+            XCTAssert(true)
+        }
+    }
+    
+    func testDecodeDeviceProtobufError() {
+        do {
+            _ = try CardboardFactory.CardboardParamsFromBase64("Tm9uZXNlbnNlIERhdGE=")!
+            XCTAssert(false)
+        } catch {
+            XCTAssert(true)
+        }
+    }
+    
+    func testUrlResolveError() {
         
-        XCTAssertEqual(headset.vendor, "Google")
-        XCTAssertEqual(headset.model, "Cardboard I/O 2015")
+        let expectation = expectationWithDescription("Error cought")
+        
+        CardboardFactory.CardboardParamsFromUrl("asdf://nonesense_url", onCompleted: { cardboard, error in
+            XCTAssert(error != nil)
+            expectation.fulfill()
+        })
+        
+        waitForExpectationsWithTimeout(5, handler: { error in
+            if error != nil {
+                XCTAssert(false, "Timeout")
+            }
+        })
     }
     
     func testDecodeDeviceFromData() {

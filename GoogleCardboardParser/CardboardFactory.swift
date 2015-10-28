@@ -8,28 +8,42 @@
 
 import Foundation
 
+public enum CardboardParserError : ErrorType {
+    case URLFormatError(String)
+    case URLResolveError(String)
+    case Base64DecodingError(String)
+    case ParserError(String)
+}
+
 public class CardboardFactory {
     
-    public static func CardboardParamsFromUrl(url: String, onCompleted: CardboardParams? -> Void) {
-        URLResolver.resolve(url, onCompleted: { data in
-            guard let data = data else {
-                onCompleted(nil)
+    public static func CardboardParamsFromUrl(url: String, onCompleted: (CardboardParams?, CardboardParserError?) -> Void) {
+        URLResolver.resolve(url, onCompleted: { data_, error in
+            guard let data = data_ else {
+                onCompleted(nil, error)
                 return
             }
             
-            onCompleted(CardboardFactory.CardboardParamsFromData(data))
+            do {
+                let headset = try CardboardFactory.CardboardParamsFromData(data)
+                onCompleted(headset, nil)
+            } catch {
+                onCompleted(nil, error as? CardboardParserError)
+            }
         })
     }
     
-    public static func CardboardParamsFromData(data: NSData) -> CardboardParams? {
-        guard let headset = try? Headset.parseFromData(data) else {
-            return nil
+    public static func CardboardParamsFromData(data: NSData) throws -> CardboardParams? {
+        do {
+            let headset = try Headset.parseFromData(data)
+            let params = CardboardParams(root: headset, data: data)
+            return params
+        } catch {
+            throw CardboardParserError.ParserError("Failed to parse cardboard data using protobuf: \(error)")
         }
-        let params = CardboardParams(root: headset, data: data)
-        return params
     }
     
-    public static func CardboardParamsFromBase64(base64: String) -> CardboardParams? {
+    public static func CardboardParamsFromBase64(base64: String) throws -> CardboardParams? {
         //Replace base64url chars with base64 chars. 
         var safe = base64.stringByReplacingOccurrencesOfString("-", withString: "+",
             options: NSStringCompareOptions.LiteralSearch, range: nil)
@@ -41,9 +55,9 @@ public class CardboardFactory {
         }
         
         guard let data = NSData(base64EncodedString: safe, options: NSDataBase64DecodingOptions(rawValue: 0)) else {
-            return nil
+            throw CardboardParserError.Base64DecodingError("Failed to decode base64 string: \(base64)")
         }
         
-        return CardboardParamsFromData(data)
+        return try CardboardParamsFromData(data)
     }
 }
