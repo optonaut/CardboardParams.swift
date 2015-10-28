@@ -1,1 +1,1 @@
-# GoogleCardboardParser.swift
+# CardboardParams.swift

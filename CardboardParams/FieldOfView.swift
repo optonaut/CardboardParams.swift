@@ -1,6 +1,6 @@
 //
 //  FieldOfFiew.swift
-//  GoogleCardboardParser
+//  CardboardParams
 //
 //  Created by Emi on 25/10/15.
 //  Copyright © 2015 Optonaut. All rights reserved.

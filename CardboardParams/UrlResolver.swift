@@ -1,18 +1,29 @@
 //
 //  UrlResolver.swift
-//  GoogleCardboardParser
+//  CardboardParams
 //
 //  Created by Emi on 24/10/15.
 //  Copyright © 2015 Optonaut. All rights reserved.
 //
 
 import Foundation
+import Result
+
+    
+public enum CardboardError: ErrorType {
+    case URLFormatError(String)
+    case URLResolveError(String)
+    case Base64DecodingError(String)
+    case ParserError(String)
+}
 
 internal class URLResolver: NSObject  {
     
-    static func resolve(url_: String, onCompleted: (NSData?, CardboardParserError?) -> Void) {
-        guard let url = NSURL(string: url_) else {
-            onCompleted(nil, CardboardParserError.URLFormatError("Input given is not an URL: \(url_)"))
+    typealias URLResolverResult = Result<String, CardboardError>
+    
+    static func resolve(urlStr: String, onCompleted: URLResolverResult -> Void) {
+        guard let url = NSURL(string: urlStr) else {
+            onCompleted(URLResolverResult(error: .URLFormatError("Input given is not an URL: \(urlStr)")))
             return
         }
     
@@ -23,12 +34,12 @@ internal class URLResolver: NSObject  {
         
         let task = session.dataTaskWithURL(url) {(data, response, error) in
             if let error = error {
-                onCompleted(nil, CardboardParserError.URLResolveError("Error resolving URL: \(url_), \(error)"))
+                onCompleted(URLResolverResult(error: .URLResolveError("Error resolving URL: \(urlStr), \(error)")))
                 return
 
             }
             guard let httpResponse = response as? NSHTTPURLResponse else {
-                onCompleted(nil, CardboardParserError.URLResolveError("Input given is not a HTTP URL: \(url_)"))
+                onCompleted(URLResolverResult(error: .URLResolveError("Input given is not a HTTP URL: \(urlStr)")))
                 return
             }
             
@@ -36,11 +47,12 @@ internal class URLResolver: NSObject  {
                 let newUrl = httpResponse.allHeaderFields["Location"] as! String
                 if let prefixRange = newUrl.rangeOfString("http://google.com/cardboard/cfg?p=") {
                     let suffixStart = newUrl.startIndex.advancedBy(prefixRange.count)
-                    let suffix = newUrl.substringFromIndex(suffixStart)
-                    onCompleted(NSData(base64EncodedString: suffix, options: []), nil)
+                    let suffixString = newUrl.substringFromIndex(suffixStart)
+                    
+                    onCompleted(URLResolverResult(value: suffixString))
                 }
             } else {
-                onCompleted(nil, CardboardParserError.URLResolveError("Given URL did not contain any cardboard data: \(url_)"))
+                onCompleted(URLResolverResult(error: .URLResolveError("Given URL did not contain any cardboard data: \(urlStr)")))
             }
         }
         

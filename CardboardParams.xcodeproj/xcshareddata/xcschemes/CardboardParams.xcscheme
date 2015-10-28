@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A59F67901BDC29A8004559A7"
-               BuildableName = "GoogleCardboardParser.framework"
-               BlueprintName = "GoogleCardboardParser"
-               ReferencedContainer = "container:GoogleCardboardParser.xcodeproj">
+               BuildableName = "CardboardParams.framework"
+               BlueprintName = "CardboardParams"
+               ReferencedContainer = "container:CardboardParams.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A59F679A1BDC29A8004559A7"
-               BuildableName = "GoogleCardboardParserTests.xctest"
-               BlueprintName = "GoogleCardboardParserTests"
-               ReferencedContainer = "container:GoogleCardboardParser.xcodeproj">
+               BuildableName = "CardboardParamsTests.xctest"
+               BlueprintName = "CardboardParamsTests"
+               ReferencedContainer = "container:CardboardParams.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A59F67901BDC29A8004559A7"
-            BuildableName = "GoogleCardboardParser.framework"
-            BlueprintName = "GoogleCardboardParser"
-            ReferencedContainer = "container:GoogleCardboardParser.xcodeproj">
+            BuildableName = "CardboardParams.framework"
+            BlueprintName = "CardboardParams"
+            ReferencedContainer = "container:CardboardParams.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A59F67901BDC29A8004559A7"
-            BuildableName = "GoogleCardboardParser.framework"
-            BlueprintName = "GoogleCardboardParser"
-            ReferencedContainer = "container:GoogleCardboardParser.xcodeproj">
+            BuildableName = "CardboardParams.framework"
+            BlueprintName = "CardboardParams"
+            ReferencedContainer = "container:CardboardParams.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -83,9 +83,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A59F67901BDC29A8004559A7"
-            BuildableName = "GoogleCardboardParser.framework"
-            BlueprintName = "GoogleCardboardParser"
-            ReferencedContainer = "container:GoogleCardboardParser.xcodeproj">
+            BuildableName = "CardboardParams.framework"
+            BlueprintName = "CardboardParams"
+            ReferencedContainer = "container:CardboardParams.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
