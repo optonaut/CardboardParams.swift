@@ -18,8 +18,8 @@ public enum CardboardParserError : ErrorType {
 public class CardboardFactory {
     
     public static func CardboardParamsFromUrl(url: String, onCompleted: (CardboardParams?, CardboardParserError?) -> Void) {
-        URLResolver.resolve(url, onCompleted: { data_, error in
-            guard let data = data_ else {
+        URLResolver.resolve(url, onCompleted: { data, error in
+            guard let data = data else {
                 onCompleted(nil, error)
                 return
             }
@@ -33,7 +33,7 @@ public class CardboardFactory {
         })
     }
     
-    public static func CardboardParamsFromData(data: NSData) throws -> CardboardParams? {
+    public static func CardboardParamsFromData(data: NSData) throws -> CardboardParams {
         do {
             let headset = try Headset.parseFromData(data)
             let params = CardboardParams(root: headset, data: data)
@@ -43,7 +43,7 @@ public class CardboardFactory {
         }
     }
     
-    public static func CardboardParamsFromBase64(base64: String) throws -> CardboardParams? {
+    public static func CardboardParamsFromBase64(base64: String) throws -> CardboardParams {
         //Replace base64url chars with base64 chars. 
         var safe = base64.stringByReplacingOccurrencesOfString("-", withString: "+",
             options: NSStringCompareOptions.LiteralSearch, range: nil)
