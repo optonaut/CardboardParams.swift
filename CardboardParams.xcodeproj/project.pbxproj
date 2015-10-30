@@ -158,7 +158,6 @@
 				A59F678D1BDC29A8004559A7 /* Frameworks */,
 				A59F678E1BDC29A8004559A7 /* Headers */,
 				A59F678F1BDC29A8004559A7 /* Resources */,
-				A59F67BA1BDC32B3004559A7 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -241,25 +240,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		A59F67BA1BDC32B3004559A7 /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/build/iOS/ProtocolBuffers.framework",
-				"$(SRCROOT)/Carthage/build/iOS/Result.framework",
-			);
-			name = Carthage;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A59F678C1BDC29A8004559A7 /* Sources */ = {
