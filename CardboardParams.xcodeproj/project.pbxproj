@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8F4B6F9D1BE0E7E8005D2D68 /* ProtocolBuffers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4B6F9B1BE0E7E8005D2D68 /* ProtocolBuffers.framework */; };
-		8F4B6F9E1BE0E7E8005D2D68 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4B6F9C1BE0E7E8005D2D68 /* Result.framework */; };
-		8F4B6FA01BE0EFD8005D2D68 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8F4B6F9C1BE0E7E8005D2D68 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8F4B6FA31BE0F9CA005D2D68 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4B6F9C1BE0E7E8005D2D68 /* Result.framework */; };
+		8FF46E251C19C8CF00BE3F6D /* CardboardParamsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF46E241C19C8CF00BE3F6D /* CardboardParamsTests.swift */; };
+		8FF46E271C19C8CF00BE3F6D /* CardboardParams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59F67911BDC29A8004559A7 /* CardboardParams.framework */; };
+		8FF46E2F1C19C8F600BE3F6D /* ProtocolBuffers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF46E2D1C19C8F600BE3F6D /* ProtocolBuffers.framework */; };
+		8FF46E301C19C8F600BE3F6D /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF46E2E1C19C8F600BE3F6D /* Result.framework */; };
+		8FF46E321C19C9E200BE3F6D /* ProtocolBuffers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF46E2D1C19C8F600BE3F6D /* ProtocolBuffers.framework */; };
+		8FF46E331C19C9E200BE3F6D /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF46E2E1C19C8F600BE3F6D /* Result.framework */; };
 		A5409A2C1BDD307F0088E0A2 /* CardboardParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5409A2B1BDD307F0088E0A2 /* CardboardParams.swift */; };
 		A5409A2E1BDD31180088E0A2 /* FieldOfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5409A2D1BDD31180088E0A2 /* FieldOfView.swift */; };
 		A5409A301BDD353A0088E0A2 /* ScreenParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5409A2F1BDD353A0088E0A2 /* ScreenParams.swift */; };
 		A59F67951BDC29A8004559A7 /* CardboardParams.h in Headers */ = {isa = PBXBuildFile; fileRef = A59F67941BDC29A8004559A7 /* CardboardParams.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A59F679C1BDC29A8004559A7 /* CardboardParams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59F67911BDC29A8004559A7 /* CardboardParams.framework */; };
-		A59F67A11BDC29A8004559A7 /* CardboardParamsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F67A01BDC29A8004559A7 /* CardboardParamsTests.swift */; };
 		A59F67AE1BDC2B66004559A7 /* Headset.proto in Resources */ = {isa = PBXBuildFile; fileRef = A59F67AD1BDC2B66004559A7 /* Headset.proto */; };
 		A59F67B61BDC2F38004559A7 /* Headset.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F67B51BDC2F38004559A7 /* Headset.proto.swift */; };
 		A59F67BE1BDC4748004559A7 /* UrlResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F67BD1BDC4748004559A7 /* UrlResolver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A59F679D1BDC29A8004559A7 /* PBXContainerItemProxy */ = {
+		8FF46E281C19C8CF00BE3F6D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A59F67881BDC29A8004559A7 /* Project object */;
 			proxyType = 1;
@@ -32,65 +32,62 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		8F4B6F9F1BE0EFCA005D2D68 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				8F4B6FA01BE0EFD8005D2D68 /* Result.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		8F4B6F9B1BE0E7E8005D2D68 /* ProtocolBuffers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProtocolBuffers.framework; path = Carthage/Build/iOS/ProtocolBuffers.framework; sourceTree = "<group>"; };
-		8F4B6F9C1BE0E7E8005D2D68 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		8FF46E221C19C8CF00BE3F6D /* CardboardParamsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardboardParamsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FF46E241C19C8CF00BE3F6D /* CardboardParamsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardboardParamsTests.swift; sourceTree = "<group>"; };
+		8FF46E261C19C8CF00BE3F6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FF46E2D1C19C8F600BE3F6D /* ProtocolBuffers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProtocolBuffers.framework; path = Carthage/Build/iOS/ProtocolBuffers.framework; sourceTree = "<group>"; };
+		8FF46E2E1C19C8F600BE3F6D /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		A5409A2B1BDD307F0088E0A2 /* CardboardParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardboardParams.swift; sourceTree = "<group>"; };
 		A5409A2D1BDD31180088E0A2 /* FieldOfView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldOfView.swift; sourceTree = "<group>"; };
 		A5409A2F1BDD353A0088E0A2 /* ScreenParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenParams.swift; sourceTree = "<group>"; };
 		A59F67911BDC29A8004559A7 /* CardboardParams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CardboardParams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59F67941BDC29A8004559A7 /* CardboardParams.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardboardParams.h; sourceTree = "<group>"; };
 		A59F67961BDC29A8004559A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A59F679B1BDC29A8004559A7 /* CardboardParamsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardboardParamsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A59F67A01BDC29A8004559A7 /* CardboardParamsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardboardParamsTests.swift; sourceTree = "<group>"; };
-		A59F67A21BDC29A8004559A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A59F67AD1BDC2B66004559A7 /* Headset.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Headset.proto; sourceTree = "<group>"; };
 		A59F67B51BDC2F38004559A7 /* Headset.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Headset.proto.swift; sourceTree = "<group>"; };
 		A59F67BD1BDC4748004559A7 /* UrlResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlResolver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8FF46E1F1C19C8CF00BE3F6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FF46E271C19C8CF00BE3F6D /* CardboardParams.framework in Frameworks */,
+				8FF46E321C19C9E200BE3F6D /* ProtocolBuffers.framework in Frameworks */,
+				8FF46E331C19C9E200BE3F6D /* Result.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A59F678D1BDC29A8004559A7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F4B6F9D1BE0E7E8005D2D68 /* ProtocolBuffers.framework in Frameworks */,
-				8F4B6F9E1BE0E7E8005D2D68 /* Result.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A59F67981BDC29A8004559A7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A59F679C1BDC29A8004559A7 /* CardboardParams.framework in Frameworks */,
-				8F4B6FA31BE0F9CA005D2D68 /* Result.framework in Frameworks */,
+				8FF46E2F1C19C8F600BE3F6D /* ProtocolBuffers.framework in Frameworks */,
+				8FF46E301C19C8F600BE3F6D /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8FF46E231C19C8CF00BE3F6D /* CardboardParamsTests */ = {
+			isa = PBXGroup;
+			children = (
+				8FF46E241C19C8CF00BE3F6D /* CardboardParamsTests.swift */,
+				8FF46E261C19C8CF00BE3F6D /* Info.plist */,
+			);
+			path = CardboardParamsTests;
+			sourceTree = "<group>";
+		};
 		A59F67871BDC29A8004559A7 = {
 			isa = PBXGroup;
 			children = (
-				8F4B6F9B1BE0E7E8005D2D68 /* ProtocolBuffers.framework */,
-				8F4B6F9C1BE0E7E8005D2D68 /* Result.framework */,
+				8FF46E2D1C19C8F600BE3F6D /* ProtocolBuffers.framework */,
+				8FF46E2E1C19C8F600BE3F6D /* Result.framework */,
 				A59F67931BDC29A8004559A7 /* CardboardParams */,
-				A59F679F1BDC29A8004559A7 /* CardboardParamsTests */,
+				8FF46E231C19C8CF00BE3F6D /* CardboardParamsTests */,
 				A59F67921BDC29A8004559A7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				A59F67911BDC29A8004559A7 /* CardboardParams.framework */,
-				A59F679B1BDC29A8004559A7 /* CardboardParamsTests.xctest */,
+				8FF46E221C19C8CF00BE3F6D /* CardboardParamsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,15 +113,6 @@
 				A59F67BD1BDC4748004559A7 /* UrlResolver.swift */,
 			);
 			path = CardboardParams;
-			sourceTree = "<group>";
-		};
-		A59F679F1BDC29A8004559A7 /* CardboardParamsTests */ = {
-			isa = PBXGroup;
-			children = (
-				A59F67A01BDC29A8004559A7 /* CardboardParamsTests.swift */,
-				A59F67A21BDC29A8004559A7 /* Info.plist */,
-			);
-			path = CardboardParamsTests;
 			sourceTree = "<group>";
 		};
 		A59F67AC1BDC2B5D004559A7 /* Proto */ = {
@@ -150,6 +138,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		8FF46E211C19C8CF00BE3F6D /* CardboardParamsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FF46E2A1C19C8CF00BE3F6D /* Build configuration list for PBXNativeTarget "CardboardParamsTests" */;
+			buildPhases = (
+				8FF46E1E1C19C8CF00BE3F6D /* Sources */,
+				8FF46E1F1C19C8CF00BE3F6D /* Frameworks */,
+				8FF46E201C19C8CF00BE3F6D /* Resources */,
+				8FF46E311C19C93D00BE3F6D /* Carthage */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8FF46E291C19C8CF00BE3F6D /* PBXTargetDependency */,
+			);
+			name = CardboardParamsTests;
+			productName = CardboardParamsTests;
+			productReference = 8FF46E221C19C8CF00BE3F6D /* CardboardParamsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A59F67901BDC29A8004559A7 /* CardboardParams */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A59F67A51BDC29A8004559A7 /* Build configuration list for PBXNativeTarget "CardboardParams" */;
@@ -168,39 +175,20 @@
 			productReference = A59F67911BDC29A8004559A7 /* CardboardParams.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		A59F679A1BDC29A8004559A7 /* CardboardParamsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A59F67A81BDC29A8004559A7 /* Build configuration list for PBXNativeTarget "CardboardParamsTests" */;
-			buildPhases = (
-				A59F67971BDC29A8004559A7 /* Sources */,
-				A59F67981BDC29A8004559A7 /* Frameworks */,
-				A59F67991BDC29A8004559A7 /* Resources */,
-				8F4B6F9F1BE0EFCA005D2D68 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A59F679E1BDC29A8004559A7 /* PBXTargetDependency */,
-			);
-			name = CardboardParamsTests;
-			productName = CardboardParamsTests;
-			productReference = A59F679B1BDC29A8004559A7 /* CardboardParamsTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		A59F67881BDC29A8004559A7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Optonaut;
 				TargetAttributes = {
-					A59F67901BDC29A8004559A7 = {
-						CreatedOnToolsVersion = 7.0;
+					8FF46E211C19C8CF00BE3F6D = {
+						CreatedOnToolsVersion = 7.1.1;
 					};
-					A59F679A1BDC29A8004559A7 = {
+					A59F67901BDC29A8004559A7 = {
 						CreatedOnToolsVersion = 7.0;
 					};
 				};
@@ -218,12 +206,19 @@
 			projectRoot = "";
 			targets = (
 				A59F67901BDC29A8004559A7 /* CardboardParams */,
-				A59F679A1BDC29A8004559A7 /* CardboardParamsTests */,
+				8FF46E211C19C8CF00BE3F6D /* CardboardParamsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8FF46E201C19C8CF00BE3F6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A59F678F1BDC29A8004559A7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -232,16 +227,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A59F67991BDC29A8004559A7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8FF46E311C19C93D00BE3F6D /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ProtocolBuffers.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
-/* End PBXResourcesBuildPhase section */
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8FF46E1E1C19C8CF00BE3F6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FF46E251C19C8CF00BE3F6D /* CardboardParamsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A59F678C1BDC29A8004559A7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -254,25 +269,47 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A59F67971BDC29A8004559A7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A59F67A11BDC29A8004559A7 /* CardboardParamsTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A59F679E1BDC29A8004559A7 /* PBXTargetDependency */ = {
+		8FF46E291C19C8CF00BE3F6D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A59F67901BDC29A8004559A7 /* CardboardParams */;
-			targetProxy = A59F679D1BDC29A8004559A7 /* PBXContainerItemProxy */;
+			targetProxy = 8FF46E281C19C8CF00BE3F6D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		8FF46E2B1C19C8CF00BE3F6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = CardboardParamsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.optonaut.CardboardParamsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8FF46E2C1C19C8CF00BE3F6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = CardboardParamsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.optonaut.CardboardParamsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		A59F67A31BDC29A8004559A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -409,37 +446,17 @@
 			};
 			name = Release;
 		};
-		A59F67A91BDC29A8004559A7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = CardboardParamsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = optonaut.CardboardParamsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		A59F67AA1BDC29A8004559A7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = CardboardParamsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = optonaut.CardboardParamsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8FF46E2A1C19C8CF00BE3F6D /* Build configuration list for PBXNativeTarget "CardboardParamsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FF46E2B1C19C8CF00BE3F6D /* Debug */,
+				8FF46E2C1C19C8CF00BE3F6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		A59F678B1BDC29A8004559A7 /* Build configuration list for PBXProject "CardboardParams" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -454,15 +471,6 @@
 			buildConfigurations = (
 				A59F67A61BDC29A8004559A7 /* Debug */,
 				A59F67A71BDC29A8004559A7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A59F67A81BDC29A8004559A7 /* Build configuration list for PBXNativeTarget "CardboardParamsTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A59F67A91BDC29A8004559A7 /* Debug */,
-				A59F67AA1BDC29A8004559A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

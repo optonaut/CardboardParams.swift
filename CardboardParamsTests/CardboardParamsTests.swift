@@ -49,14 +49,14 @@ class CardboardParamsTests: XCTestCase {
         let expectation = expectationWithDescription("Data Decoded")
         
         CardboardParams.fromUrl(url, onCompleted: { result in
-
+            
             expectation.fulfill()
             
             XCTAssert(result.error == nil)
             if let cardboard = result.value {
                 XCTAssertEqual(cardboard.vendor, "Carl Zeiss AG")
                 XCTAssertEqual(cardboard.model, "VR ONE")
-//                XCTAssertEqual(cardboard.compressedRepresentation, self.VROneData)
+                //                XCTAssertEqual(cardboard.compressedRepresentation, self.VROneData)
             } else {
                 XCTAssert(false)
             }
@@ -68,7 +68,7 @@ class CardboardParamsTests: XCTestCase {
             }
         })
     }
-
+    
     
     func testDecodeDeviceFromUrlData() {
         let headset = CardboardParams.fromBase64(OnePlusOneBase64).value!
