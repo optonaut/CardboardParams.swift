@@ -5,7 +5,7 @@ import Foundation
 import ProtocolBuffers
 
 
-internal func == (lhs: Headset, rhs: Headset) -> Bool {
+public func == (lhs: Headset, rhs: Headset) -> Bool {
   if (lhs === rhs) {
     return true
   }
@@ -24,59 +24,59 @@ internal func == (lhs: Headset, rhs: Headset) -> Bool {
   return fieldCheck
 }
 
-internal struct HeadsetRoot {
-  internal static var sharedInstance : HeadsetRoot {
+public struct HeadsetRoot {
+  public static var sharedInstance : HeadsetRoot {
    struct Static {
        static let instance : HeadsetRoot = HeadsetRoot()
    }
    return Static.instance
   }
-  internal var extensionRegistry:ExtensionRegistry
+  public var extensionRegistry:ExtensionRegistry
 
   init() {
     extensionRegistry = ExtensionRegistry()
     registerAllExtensions(extensionRegistry)
   }
-  internal func registerAllExtensions(registry:ExtensionRegistry) {
+  public func registerAllExtensions(registry:ExtensionRegistry) {
   }
 }
 
-final internal class Headset : GeneratedMessage, GeneratedMessageProtocol {
-  private(set) var hasVendor:Bool = false
-  private(set) var vendor:String = ""
+final public class Headset : GeneratedMessage, GeneratedMessageProtocol {
+  public private(set) var vendor:String = ""
 
-  private(set) var hasModel:Bool = false
-  private(set) var model:String = ""
+  public private(set) var hasVendor:Bool = false
+  public private(set) var model:String = ""
 
-  private(set) var hasScreenToLensDistance:Bool = false
-  private(set) var screenToLensDistance:Float = Float(0)
+  public private(set) var hasModel:Bool = false
+  public private(set) var screenToLensDistance:Float = Float(0)
 
-  private(set) var hasInterLensDistance:Bool = false
-  private(set) var interLensDistance:Float = Float(0)
+  public private(set) var hasScreenToLensDistance:Bool = false
+  public private(set) var interLensDistance:Float = Float(0)
 
-  private(set) var leftEyeFieldOfViewAngles:Array<Float> = Array<Float>()
+  public private(set) var hasInterLensDistance:Bool = false
+  public private(set) var leftEyeFieldOfViewAngles:Array<Float> = Array<Float>()
   private var leftEyeFieldOfViewAnglesMemoizedSerializedSize:Int32 = -1
-  private(set) var hasTrayToLensDistance:Bool = false
-  private(set) var trayToLensDistance:Float = Float(0)
+  public private(set) var trayToLensDistance:Float = Float(0)
 
-  private(set) var distortionCoefficients:Array<Float> = Array<Float>()
+  public private(set) var hasTrayToLensDistance:Bool = false
+  public private(set) var distortionCoefficients:Array<Float> = Array<Float>()
   private var distortionCoefficientsMemoizedSerializedSize:Int32 = -1
-  private(set) var hasHasMagnet:Bool = false
-  private(set) var hasMagnet:Bool = false
+  public private(set) var hasMagnet:Bool = false
 
-  private(set) var hasVerticalAlignment:Bool = false
-  private(set) var verticalAlignment:Int32 = Int32(0)
+  public private(set) var hasHasMagnet:Bool = false
+  public private(set) var verticalAlignment:Int32 = Int32(0)
 
-  private(set) var hasPrimaryButton:Bool = false
-  private(set) var primaryButton:Int32 = Int32(0)
+  public private(set) var hasVerticalAlignment:Bool = false
+  public private(set) var primaryButton:Int32 = Int32(0)
 
-  required internal init() {
+  public private(set) var hasPrimaryButton:Bool = false
+  required public init() {
        super.init()
   }
-  override internal func isInitialized() -> Bool {
+  override public func isInitialized() -> Bool {
    return true
   }
-  override internal func writeToCodedOutputStream(output:CodedOutputStream) throws {
+  override public func writeToCodedOutputStream(output:CodedOutputStream) throws {
     if hasVendor {
       try output.writeString(1, value:vendor)
     }
@@ -117,7 +117,7 @@ final internal class Headset : GeneratedMessage, GeneratedMessageProtocol {
     }
     try unknownFields.writeToCodedOutputStream(output)
   }
-  override internal func serializedSize() -> Int32 {
+  override public func serializedSize() -> Int32 {
     var serialize_size:Int32 = memoizedSerializedSize
     if serialize_size != -1 {
      return serialize_size
@@ -168,53 +168,54 @@ final internal class Headset : GeneratedMessage, GeneratedMessageProtocol {
     memoizedSerializedSize = serialize_size
     return serialize_size
   }
-  internal class func parseArrayDelimitedFromInputStream(input:NSInputStream) throws -> Array<Headset> {
+  public class func parseArrayDelimitedFromInputStream(input:NSInputStream) throws -> Array<Headset> {
     var mergedArray = Array<Headset>()
     while let value = try parseFromDelimitedFromInputStream(input) {
       mergedArray += [value]
     }
     return mergedArray
   }
-  internal class func parseFromDelimitedFromInputStream(input:NSInputStream) throws -> Headset? {
+  public class func parseFromDelimitedFromInputStream(input:NSInputStream) throws -> Headset? {
     return try Headset.Builder().mergeDelimitedFromInputStream(input)?.build()
   }
-  internal class func parseFromData(data:NSData) throws -> Headset {
+  public class func parseFromData(data:NSData) throws -> Headset {
     return try Headset.Builder().mergeFromData(data, extensionRegistry:HeadsetRoot.sharedInstance.extensionRegistry).build()
   }
-  internal class func parseFromData(data:NSData, extensionRegistry:ExtensionRegistry) throws -> Headset {
+  public class func parseFromData(data:NSData, extensionRegistry:ExtensionRegistry) throws -> Headset {
     return try Headset.Builder().mergeFromData(data, extensionRegistry:extensionRegistry).build()
   }
-  internal class func parseFromInputStream(input:NSInputStream) throws -> Headset {
+  public class func parseFromInputStream(input:NSInputStream) throws -> Headset {
     return try Headset.Builder().mergeFromInputStream(input).build()
   }
-  internal class func parseFromInputStream(input:NSInputStream, extensionRegistry:ExtensionRegistry) throws -> Headset {
+  public class func parseFromInputStream(input:NSInputStream, extensionRegistry:ExtensionRegistry) throws -> Headset {
     return try Headset.Builder().mergeFromInputStream(input, extensionRegistry:extensionRegistry).build()
   }
-  internal class func parseFromCodedInputStream(input:CodedInputStream) throws -> Headset {
+  public class func parseFromCodedInputStream(input:CodedInputStream) throws -> Headset {
     return try Headset.Builder().mergeFromCodedInputStream(input).build()
   }
-  internal class func parseFromCodedInputStream(input:CodedInputStream, extensionRegistry:ExtensionRegistry) throws -> Headset {
+  public class func parseFromCodedInputStream(input:CodedInputStream, extensionRegistry:ExtensionRegistry) throws -> Headset {
     return try Headset.Builder().mergeFromCodedInputStream(input, extensionRegistry:extensionRegistry).build()
   }
-  internal class func getBuilder() -> Headset.Builder {
+  public class func getBuilder() -> Headset.Builder {
     return Headset.classBuilder() as! Headset.Builder
   }
-  internal func getBuilder() -> Headset.Builder {
+  public func getBuilder() -> Headset.Builder {
     return classBuilder() as! Headset.Builder
   }
-  internal override class func classBuilder() -> MessageBuilder {
+  public override class func classBuilder() -> MessageBuilder {
     return Headset.Builder()
   }
-  internal override func classBuilder() -> MessageBuilder {
+  public override func classBuilder() -> MessageBuilder {
     return Headset.Builder()
   }
-  internal func toBuilder() throws -> Headset.Builder {
+  public func toBuilder() throws -> Headset.Builder {
     return try Headset.builderWithPrototype(self)
   }
-  internal class func builderWithPrototype(prototype:Headset) throws -> Headset.Builder {
+  public class func builderWithPrototype(prototype:Headset) throws -> Headset.Builder {
     return try Headset.Builder().mergeFrom(prototype)
   }
-  override internal func writeDescriptionTo(inout output:String, indent:String) throws {
+  override public func getDescription(indent:String) throws -> String {
+    var output:String = ""
     if hasVendor {
       output += "\(indent) vendor: \(vendor) \n"
     }
@@ -230,7 +231,7 @@ final internal class Headset : GeneratedMessage, GeneratedMessageProtocol {
     var leftEyeFieldOfViewAnglesElementIndex:Int = 0
     for oneValueleftEyeFieldOfViewAngles in leftEyeFieldOfViewAngles  {
         output += "\(indent) leftEyeFieldOfViewAngles[\(leftEyeFieldOfViewAnglesElementIndex)]: \(oneValueleftEyeFieldOfViewAngles)\n"
-        leftEyeFieldOfViewAnglesElementIndex++
+        leftEyeFieldOfViewAnglesElementIndex += 1
     }
     if hasTrayToLensDistance {
       output += "\(indent) trayToLensDistance: \(trayToLensDistance) \n"
@@ -238,7 +239,7 @@ final internal class Headset : GeneratedMessage, GeneratedMessageProtocol {
     var distortionCoefficientsElementIndex:Int = 0
     for oneValuedistortionCoefficients in distortionCoefficients  {
         output += "\(indent) distortionCoefficients[\(distortionCoefficientsElementIndex)]: \(oneValuedistortionCoefficients)\n"
-        distortionCoefficientsElementIndex++
+        distortionCoefficientsElementIndex += 1
     }
     if hasHasMagnet {
       output += "\(indent) hasMagnet: \(hasMagnet) \n"
@@ -249,9 +250,10 @@ final internal class Headset : GeneratedMessage, GeneratedMessageProtocol {
     if hasPrimaryButton {
       output += "\(indent) primaryButton: \(primaryButton) \n"
     }
-    unknownFields.writeDescriptionTo(&output, indent:indent)
+    output += unknownFields.getDescription(indent)
+    return output
   }
-  override internal var hashValue:Int {
+  override public var hashValue:Int {
       get {
           var hashCode:Int = 7
           if hasVendor {
@@ -292,32 +294,32 @@ final internal class Headset : GeneratedMessage, GeneratedMessageProtocol {
 
   //Meta information declaration start
 
-  override internal class func className() -> String {
+  override public class func className() -> String {
       return "Headset"
   }
-  override internal func className() -> String {
+  override public func className() -> String {
       return "Headset"
   }
-  override internal func classMetaType() -> GeneratedMessage.Type {
+  override public func classMetaType() -> GeneratedMessage.Type {
       return Headset.self
   }
   //Meta information declaration end
 
-  final internal class Builder : GeneratedMessageBuilder {
+  final public class Builder : GeneratedMessageBuilder {
     private var builderResult:Headset = Headset()
-    internal func getMessage() -> Headset {
+    public func getMessage() -> Headset {
         return builderResult
     }
 
-    required override internal init () {
+    required override public init () {
        super.init()
     }
-    var hasVendor:Bool {
+    public var hasVendor:Bool {
          get {
               return builderResult.hasVendor
          }
     }
-    var vendor:String {
+    public var vendor:String {
          get {
               return builderResult.vendor
          }
@@ -326,21 +328,21 @@ final internal class Headset : GeneratedMessage, GeneratedMessageProtocol {
              builderResult.vendor = value
          }
     }
-    func setVendor(value:String) -> Headset.Builder {
+    public func setVendor(value:String) -> Headset.Builder {
       self.vendor = value
       return self
     }
-    internal func clearVendor() -> Headset.Builder{
+    public func clearVendor() -> Headset.Builder{
          builderResult.hasVendor = false
          builderResult.vendor = ""
          return self
     }
-    var hasModel:Bool {
+    public var hasModel:Bool {
          get {
               return builderResult.hasModel
          }
     }
-    var model:String {
+    public var model:String {
          get {
               return builderResult.model
          }
@@ -349,21 +351,21 @@ final internal class Headset : GeneratedMessage, GeneratedMessageProtocol {
              builderResult.model = value
          }
     }
-    func setModel(value:String) -> Headset.Builder {
+    public func setModel(value:String) -> Headset.Builder {
       self.model = value
       return self
     }
-    internal func clearModel() -> Headset.Builder{
+    public func clearModel() -> Headset.Builder{
          builderResult.hasModel = false
          builderResult.model = ""
          return self
     }
-    var hasScreenToLensDistance:Bool {
+    public var hasScreenToLensDistance:Bool {
          get {
               return builderResult.hasScreenToLensDistance
          }
     }
-    var screenToLensDistance:Float {
+    public var screenToLensDistance:Float {
          get {
               return builderResult.screenToLensDistance
          }
@@ -372,21 +374,21 @@ final internal class Headset : GeneratedMessage, GeneratedMessageProtocol {
              builderResult.screenToLensDistance = value
          }
     }
-    func setScreenToLensDistance(value:Float) -> Headset.Builder {
+    public func setScreenToLensDistance(value:Float) -> Headset.Builder {
       self.screenToLensDistance = value
       return self
     }
-    internal func clearScreenToLensDistance() -> Headset.Builder{
+    public func clearScreenToLensDistance() -> Headset.Builder{
          builderResult.hasScreenToLensDistance = false
          builderResult.screenToLensDistance = Float(0)
          return self
     }
-    var hasInterLensDistance:Bool {
+    public var hasInterLensDistance:Bool {
          get {
               return builderResult.hasInterLensDistance
          }
     }
-    var interLensDistance:Float {
+    public var interLensDistance:Float {
          get {
               return builderResult.interLensDistance
          }
@@ -395,16 +397,16 @@ final internal class Headset : GeneratedMessage, GeneratedMessageProtocol {
              builderResult.interLensDistance = value
          }
     }
-    func setInterLensDistance(value:Float) -> Headset.Builder {
+    public func setInterLensDistance(value:Float) -> Headset.Builder {
       self.interLensDistance = value
       return self
     }
-    internal func clearInterLensDistance() -> Headset.Builder{
+    public func clearInterLensDistance() -> Headset.Builder{
          builderResult.hasInterLensDistance = false
          builderResult.interLensDistance = Float(0)
          return self
     }
-    var leftEyeFieldOfViewAngles:Array<Float> {
+    public var leftEyeFieldOfViewAngles:Array<Float> {
          get {
              return builderResult.leftEyeFieldOfViewAngles
          }
@@ -412,20 +414,20 @@ final internal class Headset : GeneratedMessage, GeneratedMessageProtocol {
              builderResult.leftEyeFieldOfViewAngles = array
          }
     }
-    func setLeftEyeFieldOfViewAngles(value:Array<Float>) -> Headset.Builder {
+    public func setLeftEyeFieldOfViewAngles(value:Array<Float>) -> Headset.Builder {
       self.leftEyeFieldOfViewAngles = value
       return self
     }
-    internal func clearLeftEyeFieldOfViewAngles() -> Headset.Builder {
+    public func clearLeftEyeFieldOfViewAngles() -> Headset.Builder {
        builderResult.leftEyeFieldOfViewAngles.removeAll(keepCapacity: false)
        return self
     }
-    var hasTrayToLensDistance:Bool {
+    public var hasTrayToLensDistance:Bool {
          get {
               return builderResult.hasTrayToLensDistance
          }
     }
-    var trayToLensDistance:Float {
+    public var trayToLensDistance:Float {
          get {
               return builderResult.trayToLensDistance
          }
@@ -434,16 +436,16 @@ final internal class Headset : GeneratedMessage, GeneratedMessageProtocol {
              builderResult.trayToLensDistance = value
          }
     }
-    func setTrayToLensDistance(value:Float) -> Headset.Builder {
+    public func setTrayToLensDistance(value:Float) -> Headset.Builder {
       self.trayToLensDistance = value
       return self
     }
-    internal func clearTrayToLensDistance() -> Headset.Builder{
+    public func clearTrayToLensDistance() -> Headset.Builder{
          builderResult.hasTrayToLensDistance = false
          builderResult.trayToLensDistance = Float(0)
          return self
     }
-    var distortionCoefficients:Array<Float> {
+    public var distortionCoefficients:Array<Float> {
          get {
              return builderResult.distortionCoefficients
          }
@@ -451,20 +453,20 @@ final internal class Headset : GeneratedMessage, GeneratedMessageProtocol {
              builderResult.distortionCoefficients = array
          }
     }
-    func setDistortionCoefficients(value:Array<Float>) -> Headset.Builder {
+    public func setDistortionCoefficients(value:Array<Float>) -> Headset.Builder {
       self.distortionCoefficients = value
       return self
     }
-    internal func clearDistortionCoefficients() -> Headset.Builder {
+    public func clearDistortionCoefficients() -> Headset.Builder {
        builderResult.distortionCoefficients.removeAll(keepCapacity: false)
        return self
     }
-    var hasHasMagnet:Bool {
+    public var hasHasMagnet:Bool {
          get {
               return builderResult.hasHasMagnet
          }
     }
-    var hasMagnet:Bool {
+    public var hasMagnet:Bool {
          get {
               return builderResult.hasMagnet
          }
@@ -473,21 +475,21 @@ final internal class Headset : GeneratedMessage, GeneratedMessageProtocol {
              builderResult.hasMagnet = value
          }
     }
-    func setHasMagnet(value:Bool) -> Headset.Builder {
+    public func setHasMagnet(value:Bool) -> Headset.Builder {
       self.hasMagnet = value
       return self
     }
-    internal func clearHasMagnet() -> Headset.Builder{
+    public func clearHasMagnet() -> Headset.Builder{
          builderResult.hasHasMagnet = false
          builderResult.hasMagnet = false
          return self
     }
-    var hasVerticalAlignment:Bool {
+    public var hasVerticalAlignment:Bool {
          get {
               return builderResult.hasVerticalAlignment
          }
     }
-    var verticalAlignment:Int32 {
+    public var verticalAlignment:Int32 {
          get {
               return builderResult.verticalAlignment
          }
@@ -496,21 +498,21 @@ final internal class Headset : GeneratedMessage, GeneratedMessageProtocol {
              builderResult.verticalAlignment = value
          }
     }
-    func setVerticalAlignment(value:Int32) -> Headset.Builder {
+    public func setVerticalAlignment(value:Int32) -> Headset.Builder {
       self.verticalAlignment = value
       return self
     }
-    internal func clearVerticalAlignment() -> Headset.Builder{
+    public func clearVerticalAlignment() -> Headset.Builder{
          builderResult.hasVerticalAlignment = false
          builderResult.verticalAlignment = Int32(0)
          return self
     }
-    var hasPrimaryButton:Bool {
+    public var hasPrimaryButton:Bool {
          get {
               return builderResult.hasPrimaryButton
          }
     }
-    var primaryButton:Int32 {
+    public var primaryButton:Int32 {
          get {
               return builderResult.primaryButton
          }
@@ -519,36 +521,36 @@ final internal class Headset : GeneratedMessage, GeneratedMessageProtocol {
              builderResult.primaryButton = value
          }
     }
-    func setPrimaryButton(value:Int32) -> Headset.Builder {
+    public func setPrimaryButton(value:Int32) -> Headset.Builder {
       self.primaryButton = value
       return self
     }
-    internal func clearPrimaryButton() -> Headset.Builder{
+    public func clearPrimaryButton() -> Headset.Builder{
          builderResult.hasPrimaryButton = false
          builderResult.primaryButton = Int32(0)
          return self
     }
-    override internal var internalGetResult:GeneratedMessage {
+    override public var internalGetResult:GeneratedMessage {
          get {
             return builderResult
          }
     }
-    internal override func clear() -> Headset.Builder {
+    public override func clear() -> Headset.Builder {
       builderResult = Headset()
       return self
     }
-    internal override func clone() throws -> Headset.Builder {
+    public override func clone() throws -> Headset.Builder {
       return try Headset.builderWithPrototype(builderResult)
     }
-    internal override func build() throws -> Headset {
+    public override func build() throws -> Headset {
          try checkInitialized()
          return buildPartial()
     }
-    internal func buildPartial() -> Headset {
+    public func buildPartial() -> Headset {
       let returnMe:Headset = builderResult
       return returnMe
     }
-    internal func mergeFrom(other:Headset) throws -> Headset.Builder {
+    public func mergeFrom(other:Headset) throws -> Headset.Builder {
       if other == Headset() {
        return self
       }
@@ -585,14 +587,14 @@ final internal class Headset : GeneratedMessage, GeneratedMessageProtocol {
       try mergeUnknownFields(other.unknownFields)
       return self
     }
-    internal override func mergeFromCodedInputStream(input:CodedInputStream) throws -> Headset.Builder {
+    public override func mergeFromCodedInputStream(input:CodedInputStream) throws -> Headset.Builder {
          return try mergeFromCodedInputStream(input, extensionRegistry:ExtensionRegistry())
     }
-    internal override func mergeFromCodedInputStream(input:CodedInputStream, extensionRegistry:ExtensionRegistry) throws -> Headset.Builder {
+    public override func mergeFromCodedInputStream(input:CodedInputStream, extensionRegistry:ExtensionRegistry) throws -> Headset.Builder {
       let unknownFieldsBuilder:UnknownFieldSet.Builder = try UnknownFieldSet.builderWithUnknownFields(self.unknownFields)
       while (true) {
-        let tag = try input.readTag()
-        switch tag {
+        let protobufTag = try input.readTag()
+        switch protobufTag {
         case 0: 
           self.unknownFields = try unknownFieldsBuilder.build()
           return self
@@ -638,7 +640,7 @@ final internal class Headset : GeneratedMessage, GeneratedMessageProtocol {
           primaryButton = try input.readInt32()
 
         default:
-          if (!(try parseUnknownField(input,unknownFields:unknownFieldsBuilder, extensionRegistry:extensionRegistry, tag:tag))) {
+          if (!(try parseUnknownField(input,unknownFields:unknownFieldsBuilder, extensionRegistry:extensionRegistry, tag:protobufTag))) {
              unknownFields = try unknownFieldsBuilder.build()
              return self
           }

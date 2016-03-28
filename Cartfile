@@ -1,2 +1,2 @@
-github "alexeyxo/protobuf-swift" "2.4"
+github "alexeyxo/protobuf-swift" "2.4.3"
 github "antitypical/Result" "1.0.1"
