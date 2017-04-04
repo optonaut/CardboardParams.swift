@@ -2,7 +2,7 @@
 
 A library to parse parameters from [Google Cardboard QR codes](https://support.google.com/cardboard/manufacturers/answer/6321873?hl=en) and urls. 
 
-![Cardboard QR Code](http://i.imgur.com/PVQmYPB.jpg | width=100)
+![Cardboard QR Code](http://i.imgur.com/PVQmYPB.jpg =200x)
 
 ## How does it work
 
