@@ -13,6 +13,7 @@ refers to a shortened URL which needs to be resolved first.
 
 ```
 let url = "http://goo.gl/vvTUK3";
+
 CardboardParams.fromUrl(url, onCompleted: { result in
     if let cardboard = result.value {
         print(cardboard.vendor) // Carl Zeiss AG
@@ -28,4 +29,12 @@ CardboardParams.fromUrl(url, onCompleted: { result in
         // Handle Error
     }
 })
+```
+
+## Installing via Carthage
+
+Add the following to your cartfile:
+
+```
+github "optonaut/CardboardParams.swift" >= 0.1.5
 ```
