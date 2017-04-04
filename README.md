@@ -1,11 +1,13 @@
 # CardboardParams.swift
 
-A library to parse parameter from Google Cardboard QR codes. 
+A library to parse parameters from [Google Cardboard QR codes](https://support.google.com/cardboard/manufacturers/answer/6321873?hl=en) and urls. 
+
+![Cardboard QR Code](http://i.imgur.com/PVQmYPB.jpg)
 
 ## How does it work
 
-Google stores a URL in their Cardboard QR codes. The data that describes the device parameters is stored as base64 encoded parameter inside this URL. Sometimes, the QR code
-refers to a shortened URL which needs to be resolved first. 
+Google stores a URL in their Cardboard QR codes. The data that describes the headset's parameters is stored as base64 encoded parameter inside this URL. Sometimes, the QR code
+refers to a shortened URL which needs to be resolved first.
 
 ## Usage Example
 
@@ -15,6 +17,13 @@ CardboardParams.fromUrl(url, onCompleted: { result in
     if let cardboard = result.value {
         print(cardboard.vendor) // Carl Zeiss AG
         print(cardboard.model) // VR One
+        print(headset.distortionCoefficients) // [0.1, 1.0]
+        print(headset.leftEyeFieldOfViewAngles) // [50.0, 50.0, 50.0, 50.0]
+        print(headset.screenToLensDistance) // 0.037
+        print(headset.interLensDistance) // 0.062
+        print(headset.hasMagnet) // false
+        print(headset.verticalAlignment) // 1
+        print(headset.primaryButton) // 0
     } else {
         // Handle Error
     }
