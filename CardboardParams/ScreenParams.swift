@@ -11,15 +11,15 @@ import Foundation
 public struct ScreenParams {
 
     public enum Device {
-        case IPhone4
-        case IPhone4S
-        case IPhone5
-        case IPhone5C
-        case IPhone5S
-        case IPhone6Plus
-        case IPhone6
-        case IPhone6S
-        case IPhone6SPlus
+        case iPhone4
+        case iPhone4S
+        case iPhone5
+        case iPhone5C
+        case iPhone5S
+        case iPhone6Plus
+        case iPhone6
+        case iPhone6S
+        case iPhone6SPlus
     }
     
     static let DefaultBorderSizeInMeters = Float(0.003)
@@ -54,10 +54,10 @@ public struct ScreenParams {
     
     public init(device: Device) {
         switch device {
-        case .IPhone4, .IPhone4S: self.init(width: 640, height: 960, diagonalInInch: 3.5)
-        case .IPhone5, .IPhone5C, .IPhone5S: self.init(width: 640, height: 1136, diagonalInInch: 4)
-        case .IPhone6Plus, .IPhone6SPlus: self.init(width: 1242, height: 2208, diagonalInInch: 5.5)
-        case .IPhone6, .IPhone6S: self.init(width: 750, height: 1334, diagonalInInch: 4.7)
+        case .iPhone4, .iPhone4S: self.init(width: 640, height: 960, diagonalInInch: 3.5)
+        case .iPhone5, .iPhone5C, .iPhone5S: self.init(width: 640, height: 1136, diagonalInInch: 4)
+        case .iPhone6Plus, .iPhone6SPlus: self.init(width: 1242, height: 2208, diagonalInInch: 5.5)
+        case .iPhone6, .iPhone6S: self.init(width: 750, height: 1334, diagonalInInch: 4.7)
         }
     }
 }

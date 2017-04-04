@@ -7,12 +7,11 @@
 //
 
 import XCTest
-import Result
 @testable import CardboardParams
 
 class CardboardParamsTests: XCTestCase {
     
-    let VROneData = NSData(base64EncodedString: "Cg1DYXJsIFplaXNzIEFHEgZWUiBPTkUdUI0XPSW28309KhAAAEhCAABIQgAASEIAAEhCWAE1KVwPPToIzczMPQAAgD9QAGAA", options: NSDataBase64DecodingOptions(rawValue: 0))!
+    let VROneData = Data(base64Encoded: "Cg1DYXJsIFplaXNzIEFHEgZWUiBPTkUdUI0XPSW28309KhAAAEhCAABIQgAASEIAAEhCWAE1KVwPPToIzczMPQAAgD9QAGAA", options: NSData.Base64DecodingOptions(rawValue: 0))!
     let VROneDataBase64 = "Cg1DYXJsIFplaXNzIEFHEgZWUiBPTkUdUI0XPSW28309KhAAAEhCAABIQgAASEIAAEhCWAE1KVwPPToIzczMPQAAgD9QAGAA"
     let OnePlusOneBase64 = "CgZHb29nbGUSEkNhcmRib2FyZCBJL08gMjAxNR2ZuxY9JbbzfT0qEAAASEIAAEhCAABIQgAASEJYADUpXA89OgiCc4Y-MCqJPlAAYAM"
     let OtherOnePlusOneBase64 = "Cg5JIEFNIENhcmRib2FyZBIVSUFDIEdpYW50IEVWQSBIZWFkc2V0HRKDQD0lbxKDPSoQAABIQgAASEIAAEhCAABIQlgANexROD06CAAAAAAAAAAAUAFgAQ"
@@ -28,7 +27,7 @@ class CardboardParamsTests: XCTestCase {
     func testExpandUrlAndGetData() {
         let url = "http://goo.gl/vvTUK3";
         
-        let expectation = expectationWithDescription("Data Decoded")
+        let expectation = self.expectation(description: "Data Decoded")
         
         URLResolver.resolve(url, onCompleted: { result in
             XCTAssert(result.error == nil)
@@ -36,7 +35,7 @@ class CardboardParamsTests: XCTestCase {
             expectation.fulfill()
         })
         
-        waitForExpectationsWithTimeout(5, handler: { error in
+        waitForExpectations(timeout: 5, handler: { error in
             if error != nil {
                 XCTAssert(false, "Timeout")
             }
@@ -46,7 +45,7 @@ class CardboardParamsTests: XCTestCase {
     func testExpandUrlAndGetDataFactory() {
         let url = "http://goo.gl/vvTUK3";
         
-        let expectation = expectationWithDescription("Data Decoded")
+        let expectation = self.expectation(description: "Data Decoded")
         
         CardboardParams.fromUrl(url, onCompleted: { result in
             
@@ -62,7 +61,7 @@ class CardboardParamsTests: XCTestCase {
             }
         })
         
-        waitForExpectationsWithTimeout(5, handler: { error in
+        waitForExpectations(timeout: 5, handler: { error in
             if error != nil {
                 XCTAssert(false, "Timeout")
             }
@@ -96,14 +95,14 @@ class CardboardParamsTests: XCTestCase {
     
     func testUrlResolveError() {
         
-        let expectation = expectationWithDescription("Error cought")
+        let expectation = self.expectation(description: "Error cought")
         
         CardboardParams.fromUrl("asdf://nonesense_url", onCompleted: { result in
             XCTAssert(result.error != nil)
             expectation.fulfill()
         })
         
-        waitForExpectationsWithTimeout(5, handler: { error in
+        waitForExpectations(timeout: 5, handler: { error in
             if error != nil {
                 XCTAssert(false, "Timeout")
             }
@@ -111,7 +110,7 @@ class CardboardParamsTests: XCTestCase {
     }
     
     func testDecodeDeviceFromData() {
-        let headset = try! Headset.parseFromData(VROneData)
+        let headset = try! Headset(serializedData: VROneData)
         
         XCTAssertEqual(headset.vendor, "Carl Zeiss AG")
         XCTAssertEqual(headset.model, "VR ONE")

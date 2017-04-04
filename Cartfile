@@ -1,2 +1,2 @@
-github "alexeyxo/protobuf-swift"
-github "antitypical/Result" "0.6.0-beta.5"
+github "apple/swift-protobuf" "master"
+github "https://github.com/antitypical/Result" "master"
