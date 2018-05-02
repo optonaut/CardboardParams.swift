@@ -36,7 +36,7 @@ public struct CardboardParams {
         interLensDistance = root.interLensDistance
         verticalAlignment = VerticalAlignment(rawValue: root.verticalAlignment)!
         verticalDistanceToLensCenter = root.trayToLensDistance
-        hasMagnet = root.hasMagnet
+        hasMagnet = root.hasMagnet_p
         distortionCoefficients = root.distortionCoefficients
         screenToLensDistance = root.screenToLensDistance
         leftEyeMaxFov = FieldOfView(angles: root.leftEyeFieldOfViewAngles)
@@ -92,7 +92,7 @@ public struct CardboardParams {
             options: String.CompareOptions.literal, range: nil)
         safe = safe.replacingOccurrences(of: "_", with: "/",
             options: String.CompareOptions.literal, range: nil)
-        while safe.characters.count % 4 != 0 {
+        while safe.count % 4 != 0 {
             safe = safe + "="
         }
         
