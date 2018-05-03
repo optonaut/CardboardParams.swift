@@ -118,7 +118,7 @@ class CardboardParamsTests: XCTestCase {
         XCTAssertEqual(headset.leftEyeFieldOfViewAngles, [50.0, 50.0, 50.0, 50.0])
         XCTAssertEqual(headset.screenToLensDistance, 0.037)
         XCTAssertEqual(headset.interLensDistance, 0.062)
-        XCTAssertEqual(headset.hasMagnet, false)
+        XCTAssertEqual(headset.hasMagnet_p, false)
         XCTAssertEqual(headset.verticalAlignment, 1)
         XCTAssertEqual(headset.primaryButton, 0)
     }

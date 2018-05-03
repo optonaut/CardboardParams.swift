@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52C683592099D1AC009DF33A /* Headset.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C683582099D1AC009DF33A /* Headset.pb.swift */; };
 		8FF46E251C19C8CF00BE3F6D /* CardboardParamsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF46E241C19C8CF00BE3F6D /* CardboardParamsTests.swift */; };
 		8FF46E271C19C8CF00BE3F6D /* CardboardParams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59F67911BDC29A8004559A7 /* CardboardParams.framework */; };
 		A5409A2C1BDD307F0088E0A2 /* CardboardParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5409A2B1BDD307F0088E0A2 /* CardboardParams.swift */; };
 		A5409A2E1BDD31180088E0A2 /* FieldOfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5409A2D1BDD31180088E0A2 /* FieldOfView.swift */; };
 		A5409A301BDD353A0088E0A2 /* ScreenParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5409A2F1BDD353A0088E0A2 /* ScreenParams.swift */; };
-		A585D0411E93A0F700CAEF95 /* Headset.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585D0401E93A0F700CAEF95 /* Headset.proto.swift */; };
 		A585D0551E93ACB500CAEF95 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A585D0451E93A80200CAEF95 /* Result.framework */; };
 		A585D0561E93ACB500CAEF95 /* SwiftProtobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A585D0461E93A80200CAEF95 /* SwiftProtobuf.framework */; };
 		A59F67951BDC29A8004559A7 /* CardboardParams.h in Headers */ = {isa = PBXBuildFile; fileRef = A59F67941BDC29A8004559A7 /* CardboardParams.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,13 +31,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		52C683582099D1AC009DF33A /* Headset.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Headset.pb.swift; sourceTree = "<group>"; };
 		8FF46E221C19C8CF00BE3F6D /* CardboardParamsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardboardParamsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF46E241C19C8CF00BE3F6D /* CardboardParamsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardboardParamsTests.swift; sourceTree = "<group>"; };
 		8FF46E261C19C8CF00BE3F6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5409A2B1BDD307F0088E0A2 /* CardboardParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardboardParams.swift; sourceTree = "<group>"; };
 		A5409A2D1BDD31180088E0A2 /* FieldOfView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldOfView.swift; sourceTree = "<group>"; };
 		A5409A2F1BDD353A0088E0A2 /* ScreenParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenParams.swift; sourceTree = "<group>"; };
-		A585D0401E93A0F700CAEF95 /* Headset.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Headset.proto.swift; sourceTree = "<group>"; };
 		A585D0451E93A80200CAEF95 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		A585D0461E93A80200CAEF95 /* SwiftProtobuf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftProtobuf.framework; path = Carthage/Build/iOS/SwiftProtobuf.framework; sourceTree = "<group>"; };
 		A585D04B1E93AC5E00CAEF95 /* Result.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Result.framework.dSYM; path = Carthage/Build/Mac/Result.framework.dSYM; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 		A59F67AC1BDC2B5D004559A7 /* Proto */ = {
 			isa = PBXGroup;
 			children = (
-				A585D0401E93A0F700CAEF95 /* Headset.proto.swift */,
+				52C683582099D1AC009DF33A /* Headset.pb.swift */,
 				A59F67AD1BDC2B66004559A7 /* Headset.proto */,
 			);
 			path = Proto;
@@ -277,8 +277,8 @@
 			files = (
 				A5409A301BDD353A0088E0A2 /* ScreenParams.swift in Sources */,
 				A5409A2E1BDD31180088E0A2 /* FieldOfView.swift in Sources */,
+				52C683592099D1AC009DF33A /* Headset.pb.swift in Sources */,
 				A5409A2C1BDD307F0088E0A2 /* CardboardParams.swift in Sources */,
-				A585D0411E93A0F700CAEF95 /* Headset.proto.swift in Sources */,
 				A59F67BE1BDC4748004559A7 /* UrlResolver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +297,7 @@
 		8FF46E2B1C19C8CF00BE3F6D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -313,6 +314,7 @@
 		8FF46E2C1C19C8CF00BE3F6D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
